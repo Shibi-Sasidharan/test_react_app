@@ -1,10 +1,11 @@
-import { API } from "../dal/serviceHandler"
-import { FETCH_LIST } from "../constants/actiontypes"
+import * as serviceHandler from "../dal/serviceHandler";
+import { FETCH_LIST } from "../constants/actiontypes";
+import { API_ENDPOINTS } from "../constants/apiEndpoints"
 
 export const getRecord = () => {
     return (dispatch) => {
-        API.then((response) => {
-            dispatch(itemsFetchDataSuccess(response.data))
+        serviceHandler.getHandler(API_ENDPOINTS.GET_USER_LIST).then((response) => {
+            dispatch(itemsFetchDataSuccess(response.results))
         })
             .catch();
     };

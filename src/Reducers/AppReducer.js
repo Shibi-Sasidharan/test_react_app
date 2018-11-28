@@ -1,11 +1,10 @@
 import { FETCH_LIST } from "../constants/actiontypes";
 
 const initialState = {
-    list: {}
+    list: []
 };
 
 const AppReducer = (state = initialState, action) => {
-    debugger
     switch (action.type) {
         case FETCH_LIST: {
             return {
