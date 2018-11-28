@@ -9,7 +9,7 @@ import App from './containers/app/app';
 // The parent component wraps other components and thus serves as  the entrance to 
 // other React components.
 const RoutingConfig = () => (
-  <Router>
+  <Router basename="/testApp">
     <div>
       <App /> 
     </div>
