@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import 'antd/dist/antd.css';
 import { Row, Col } from 'antd';
 import { connect } from "react-redux"
-import { getRecord } from '../../Actions/appActions'
+import { getRecord } from '../../actions/appActions'
 
 class App extends Component {
   componentDidMount() {

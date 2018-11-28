@@ -1,11 +1,11 @@
-import { API } from "../Service"
-import { FETCH_LIST } from "../Constants/actiontypes"
+import { API } from "../dal/serviceHandler"
+import { FETCH_LIST } from "../constants/actiontypes"
 
 export const getRecord = () => {
-    debugger
     return (dispatch) => {
         API.then((response) => {
-                dispatch(itemsFetchDataSuccess(response.data))})
+            dispatch(itemsFetchDataSuccess(response.data))
+        })
             .catch();
     };
 }

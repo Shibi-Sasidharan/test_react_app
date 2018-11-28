@@ -1,4 +1,4 @@
-import { FETCH_LIST } from "../Constants/actiontypes";
+import { FETCH_LIST } from "../constants/actiontypes";
 
 const initialState = {
     list: {}
