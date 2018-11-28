@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import 'antd/dist/antd.css';
 import { Row, Col } from 'antd';
 import { connect } from "react-redux"
-import { getRecord } from "./Actions/AppActions"
+import { getRecord } from '../../Actions/appActions'
 
 class App extends Component {
   componentDidMount() {
-    debugger
     this.props.getRecord()
   }
 
   render() {
+    console.log(this.props.recordList)
     return (
       <div className="App">
         <Row gutter={16}>
@@ -49,7 +49,7 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    //recordList:state.AppReducer.list
+    recordList:state.AppReducer.list
   };
 };
 

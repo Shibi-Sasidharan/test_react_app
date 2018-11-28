@@ -1,10 +1,10 @@
-import { FETCH_LIST } from "../Actiontypes";
+import { FETCH_LIST } from "../Constants/actiontypes";
 
 const initialState = {
-    list: []
+    list: {}
 };
 
-const AppRouter = (state = initialState, action) => {
+const AppReducer = (state = initialState, action) => {
     debugger
     switch (action.type) {
         case FETCH_LIST: {
@@ -17,4 +17,4 @@ const AppRouter = (state = initialState, action) => {
             return state;
     }
 }
-export default AppRouter
+export default AppReducer

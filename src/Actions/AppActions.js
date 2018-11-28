@@ -1,5 +1,5 @@
 import { API } from "../Service"
-import { FETCH_LIST } from "../Actiontypes"
+import { FETCH_LIST } from "../Constants/actiontypes"
 
 export const getRecord = () => {
     debugger
