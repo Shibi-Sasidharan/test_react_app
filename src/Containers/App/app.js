@@ -5,6 +5,7 @@ import { Layout, Menu, Row, Col } from "antd";
 import { connect } from "react-redux";
 import { getRecord } from "../../actions/appActions";
 import TableComponent from "../../components/tableComponent/index";
+import logo from "./assets/react-logo-white.png";
 
 class App extends Component {
   componentDidMount() {
@@ -74,7 +75,9 @@ class App extends Component {
       <div className="App">
         <Layout>
           <Header className={styles.headerContent}>
-            <div className="logo" />
+            <div className={styles.logo}>
+              <img src={logo} alt="logo" />
+            </div>
             <Menu
               className={styles.menuContent}
               mode="horizontal"
@@ -86,7 +89,7 @@ class App extends Component {
               <Menu.Item key="4">Contact Us</Menu.Item>
             </Menu>
           </Header>
-          <Content>
+          <Content className={styles.mainContent}>
             <Row>
               <Col span={2} />
               <Col span={20}>

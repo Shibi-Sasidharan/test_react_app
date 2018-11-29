@@ -8,8 +8,18 @@
   background-color: #0295E5;
   color: #FFFEFA;
 }
+.logo{
+  float:left; 
+}
+.logo>img{
+  width:100px;
+  height:60px;
+}
+
+.mainContent{
+  margin:10px 0px;
+}
 :global(.ant-menu-item-selected),:global(.ant-menu-item-active){
-  border-bottom: none !important;
   color:#FFFEFA!important;
 }
 :global(.ant-menu-item-selected){
@@ -17,5 +27,6 @@
 }
 :global(.ant-menu-horizontal){
   border-bottom: none !important;
+  float: right;
 }
 
