@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+}
+.textCenter {
+  text-align: center;
+}
+.headerContent,.menuContent,.footerContent{
+  background-color: #0295E5;
+  color: #FFFEFA;
+}
+.ant-menu-submenu-selected{
+  border-bottom: none !important;
+  font-weight: bold;
+}
+

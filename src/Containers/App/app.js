@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "antd/dist/antd.css";
-import styles from '../../styles/app.css'
+import styles from "../../styles/app.module.css";
 import { Layout, Menu } from "antd";
 import { connect } from "react-redux";
 import { getRecord } from "../../actions/appActions";
@@ -76,10 +76,9 @@ class App extends Component {
           <Header className={styles.headerContent}>
             <div className="logo" />
             <Menu
-              theme="light"
+              className={styles.menuContent}
               mode="horizontal"
               defaultSelectedKeys={["1"]}
-              style={{ lineHeight: "64px" }}
             >
               <Menu.Item key="1">Home</Menu.Item>
               <Menu.Item key="2">About</Menu.Item>
@@ -92,7 +91,7 @@ class App extends Component {
               <TableComponent data={this.props.recordList} columns={columns} />
             ) : null}
           </Content>
-          <Footer>
+          <Footer className={styles.footerContent}>
             <p class={styles.textCenter}>Copyright &copy; 2018</p>
           </Footer>
         </Layout>
