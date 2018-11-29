@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import "antd/dist/antd.css";
-import { Row, Col } from "antd";
+import styles from '../../styles/app.css'
+import { Layout, Menu } from "antd";
 import { connect } from "react-redux";
 import { getRecord } from "../../actions/appActions";
+import TableComponent from "../../components/tableComponent/index";
 
 class App extends Component {
   componentDidMount() {
@@ -10,50 +12,90 @@ class App extends Component {
   }
 
   render() {
+    const { Header, Footer, Content } = Layout;
+    const columns = [
+      {
+        Header: "Name",
+        columns: [
+          {
+            Header: "Title",
+            id: "title",
+            accessor: d => d.name.title
+          },
+          {
+            Header: "First Name",
+            id: "firstName",
+            accessor: d => d.name.first
+          },
+          {
+            Header: "Last Name",
+            id: "lastName",
+            accessor: d => d.name.last
+          }
+        ]
+      },
+      {
+        Header: "Info",
+        columns: [
+          {
+            Header: "Gender",
+            id: "gender",
+            accessor: d => d.gender
+          },
+          {
+            Header: "City",
+            id: "city",
+            accessor: d => d.location.city
+          },
+          {
+            Header: "State",
+            id: "state",
+            accessor: d => d.location.city
+          },
+          {
+            Header: "Picture",
+            id: "thumbnail",
+            accessor: d => d.picture.thumbnail,
+            Cell: row => {
+              return (
+                <img
+                  src={row.value}
+                  className="thumbnail-image"
+                  alt="thumbnail"
+                />
+              );
+            }
+          }
+        ]
+      }
+    ];
+
     return (
       <div className="App">
-        <Row gutter={16}>
-          <Col className="gutter-row" span={6}>
-            <div className="gutter-box">Name</div>
-          </Col>
-          <Col className="gutter-row" span={6}>
-            <div className="gutter-box">City</div>
-          </Col>
-          <Col className="gutter-row" span={6}>
-            <div className="gutter-box">State</div>
-          </Col>
-          <Col className="gutter-row" span={6}>
-            <div className="gutter-box">Picure</div>
-          </Col>
-        </Row>
-        {this.props.recordList.length > 0
-          ? this.props.recordList.map(user => {
-              return (
-                <Row gutter={16}>
-                  <Col className="gutter-row" span={6}>
-                    <div className="gutter-box">
-                      {user.name.title} {user.name.first} {user.name.last}
-                    </div>
-                  </Col>
-                  <Col className="gutter-row" span={6}>
-                    <div className="gutter-box">{user.location.city}</div>
-                  </Col>
-                  <Col className="gutter-row" span={6}>
-                    <div className="gutter-box">{user.location.state}</div>
-                  </Col>
-                  <Col className="gutter-row" span={6}>
-                    <div className="gutter-box">
-                      <img
-                        src={user.picture.thumbnail}
-                        className="thumb-image"
-                        alt="thumbnail"
-                      />
-                    </div>
-                  </Col>
-                </Row>
-              );
-            })
-          : null}
+        <Layout>
+          <Header className={styles.headerContent}>
+            <div className="logo" />
+            <Menu
+              theme="light"
+              mode="horizontal"
+              defaultSelectedKeys={["1"]}
+              style={{ lineHeight: "64px" }}
+            >
+              <Menu.Item key="1">Home</Menu.Item>
+              <Menu.Item key="2">About</Menu.Item>
+              <Menu.Item key="3">Services</Menu.Item>
+              <Menu.Item key="3">Contact Us</Menu.Item>
+            </Menu>
+          </Header>
+          <Content>
+            {this.props.recordList.length > 0 ? (
+              <TableComponent data={this.props.recordList} columns={columns} />
+            ) : null}
+          </Content>
+          <Footer>
+            <p class={styles.textCenter}>Copyright &copy; 2018</p>
+          </Footer>
+        </Layout>
       </div>
     );
   }
