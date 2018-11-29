@@ -83,7 +83,7 @@ class App extends Component {
               <Menu.Item key="1">Home</Menu.Item>
               <Menu.Item key="2">About</Menu.Item>
               <Menu.Item key="3">Services</Menu.Item>
-              <Menu.Item key="3">Contact Us</Menu.Item>
+              <Menu.Item key="4">Contact Us</Menu.Item>
             </Menu>
           </Header>
           <Content>
@@ -101,7 +101,7 @@ class App extends Component {
             </Row>
           </Content>
           <Footer className={styles.footerContent}>
-            <p class={styles.textCenter}>Copyright &copy; 2018</p>
+            <p className={styles.textCenter}>Copyright &copy; 2018</p>
           </Footer>
         </Layout>
       </div>

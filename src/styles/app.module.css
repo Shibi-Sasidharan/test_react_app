@@ -8,8 +8,14 @@
   background-color: #0295E5;
   color: #FFFEFA;
 }
-.ant-menu-submenu-selected{
+:global(.ant-menu-item-selected),:global(.ant-menu-item-active){
   border-bottom: none !important;
-  font-weight: bold;
+  color:#FFFEFA!important;
+}
+:global(.ant-menu-item-selected){
+  border-bottom: solid 1px #FFFEFA !important;
+}
+:global(.ant-menu-horizontal){
+  border-bottom: none !important;
 }
 
