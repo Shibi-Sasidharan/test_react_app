@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "antd/dist/antd.css";
 import styles from "../../styles/app.module.css";
-import { Layout, Menu } from "antd";
+import { Layout, Menu, Row, Col } from "antd";
 import { connect } from "react-redux";
 import { getRecord } from "../../actions/appActions";
 import TableComponent from "../../components/tableComponent/index";
@@ -87,9 +87,18 @@ class App extends Component {
             </Menu>
           </Header>
           <Content>
-            {this.props.recordList.length > 0 ? (
-              <TableComponent data={this.props.recordList} columns={columns} />
-            ) : null}
+            <Row>
+              <Col span={2} />
+              <Col span={20}>
+                {this.props.recordList.length > 0 ? (
+                  <TableComponent
+                    data={this.props.recordList}
+                    columns={columns}
+                  />
+                ) : null}
+              </Col>
+              <Col span={2} />
+            </Row>
           </Content>
           <Footer className={styles.footerContent}>
             <p class={styles.textCenter}>Copyright &copy; 2018</p>
